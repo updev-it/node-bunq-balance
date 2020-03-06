@@ -1,0 +1,12 @@
+/**
+ * Basic typography style for copy text
+ */
+
+html {
+  font-size: 14px;
+}
+
+body {
+  color: $primary-color;
+  font: normal 1rem / normal $text-font-stack;
+}

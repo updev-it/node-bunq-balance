@@ -1,0 +1,51 @@
+{
+  "name": "bunq-balance",
+  "version": "0.2.0",
+  "description": "Cute account balance checker for kids",
+  "readme": "README.md",
+  "keywords": [
+    "bunq",
+    "express",
+    "balance"
+  ],
+  "contributors": [
+    {
+      "name": "B. van Wetten",
+      "email": "bas.van.wetten@gmail.com",
+      "url": "https://github.com/QNimbus"
+    }
+  ],
+  "author": {
+    "name": "B. van Wetten",
+    "email": "bas.van.wetten@gmail.com",
+    "url": "https://github.com/QNimbus"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/updev-it/node-bunq-balance.git"
+  },
+  "bugs": {
+    "url": "https://github.com/updev-it/node-bunq-balance.git/issues"
+  },
+  "license": "MIT",
+  "main": "dist/server.js",
+  "dependencies": {
+    "@bunq-community/bunq-js-client": "^1.1.1",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "json-store": "^1.0.0"
+  },
+  "devDependencies": {
+    "jshint": "^2.11.0"
+  },
+  "scripts": {
+    "start": "node dist/server.js",
+    "get_accounts": "node scripts/get_account_ids.js",
+    "create_encryption_key": "node scripts/create_encryption_key.js"
+  },
+  "config": {
+    "listeningPort": "3000",
+    "listeningAddress": "localhost",
+    "useHTTPS": "false"
+  }
+}

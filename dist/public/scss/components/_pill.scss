@@ -1,0 +1,33 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the pill component.
+// -----------------------------------------------------------------------------
+
+%pill {
+  border: none;
+  padding: 0px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 8px;
+  background-color: $secondary-color;
+}
+
+.pill {
+  @extend %pill;
+
+  color: $light-color;
+}
+
+.pill-dark {
+  @extend %pill;
+
+  color: $light-color;
+  background-color: $dark-color;
+}
+
+.pill-light {
+  @extend %pill;
+
+  color: $dark-color;
+  background-color: $light-color;
+}

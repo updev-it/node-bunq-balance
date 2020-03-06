@@ -1,0 +1,17 @@
+// -----------------------------------------------------------------------------
+// When having several themes, this file contains everything related to the
+// default one.
+// -----------------------------------------------------------------------------
+
+body {
+  @include background('/img/backdrop01.jpg', $attachment: fixed);
+}
+
+h1.license {
+  font-size: 1.5rem;
+}
+
+p.license {
+  font-size: 0.8rem;
+  margin-bottom: 30px;
+}

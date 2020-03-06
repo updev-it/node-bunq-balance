@@ -1,0 +1,15 @@
+# node-bunq-balance
+dist/public/accounts/*
+!dist/public/accounts/index.html
+!dist/public/accounts/accounts.example.js
+storage.json
+.env
+
+# Dependency directory
+node_modules
+
+# vscode
+.vscode/
+
+# Yarn
+yarn-error.log

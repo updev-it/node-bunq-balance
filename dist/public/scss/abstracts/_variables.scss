@@ -1,0 +1,89 @@
+// -----------------------------------------------------------------------------
+// This file contains all application-wide Sass variables.
+// -----------------------------------------------------------------------------
+
+/// Regular font family
+/// @type List
+$text-font-stack: 'Open Sans', 'Helvetica Neue Light', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif !default;
+
+/// Code (monospace) font family
+/// @type List
+$code-font-stack: 'Courier New', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Monaco', monospace !default;
+
+/// Primary color
+/// @type Color
+$primary-color: rgb(44, 62, 80) !default;
+
+/// Main brand color
+/// @type Color
+$secondary-color: rgb(255, 102, 0) !default;
+
+/// Light
+/// @type Color
+$light-color: rgba(244, 244, 244, 1) !default;
+
+/// Dark
+/// @type Color
+$dark-color: rgba(36, 36, 36, 1) !default;
+
+/// Light grey
+/// @type Color
+$light-grey: rgb(237, 237, 237) !default;
+
+/// Medium grey
+/// @type Color
+$mid-grey: rgb(153, 153, 153) !default;
+
+/// Dark grey
+/// @type Color
+$dark-grey: rgb(68, 68, 68) !default;
+
+/// Green
+/// @type Color
+$success-color: rgb(63, 221, 129) !default;
+
+/// Red
+/// @type Color
+$danger-color: rgb(231, 63, 63) !default;
+
+/// Container's maximum width
+/// @type Length
+$max-width: 1200px !default;
+
+/// Breakpoints map
+/// @prop {String} keys - Keys are identifiers mapped to a given length
+/// @prop {Map} values - Values are actual breakpoints expressed in pixels
+// Yep
+$breakpoints: (
+  'small': (
+    min-width: 320px
+  ),
+  'medium': (
+    min-width: 800px
+  ),
+  'large': (
+    min-width: 1000px
+  ),
+  'huge': (
+    min-width: 1200px
+  )
+) !default;
+
+/// Z-indexes map, gathering all Z layers of the application
+/// @access private
+/// @type Map
+/// @prop {String} key - Layer’s name
+/// @prop {Number} value - Z value mapped to the key
+$z-indexes: (
+  'modal': 5000,
+  'dropdown': 4000,
+  'default': 1,
+  'nav': 2,
+  'below': -1
+) !default;
+
+/// Relative or absolute URL where all assets are served from
+/// @type String
+/// @example scss - When using a CDN
+///   $base-url: 'http://cdn.example.com/assets/';
+$base-url: '/assets/' !default;

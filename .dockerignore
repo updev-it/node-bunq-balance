@@ -1,0 +1,21 @@
+# node-bunq-balance
+dist/public/accounts/accounts.js
+server.key
+server.key
+server.crt
+storage.json
+.*
+!.env
+!README.md
+!LICENSE
+
+# git
+.git
+.gitignore
+
+# Docker
+Dockerfile
+.dockerignore
+
+# Dependency directory
+node_modules

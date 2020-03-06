@@ -1,0 +1,88 @@
+// -----------------------------------------------------------------------------
+// This file contains all application-wide Sass mixins.
+// -----------------------------------------------------------------------------
+
+/// Event wrapper
+/// @author Harry Roberts
+/// @param {Bool} $self [false] - Whether or not to include current selector
+/// @link https://twitter.com/csswizardry/status/478938530342006784 Original tweet from Harry Roberts
+@mixin on-hover($self: false) {
+  @if $self {
+    &,
+    &:hover {
+      @content;
+    }
+  } @else {
+    &:hover {
+      @content;
+    }
+  }
+}
+
+/// Make a context based selector a little more friendly
+/// @author Hugo Giraudel
+/// @param {String} $context
+@mixin when-inside($context) {
+  #{$context} & {
+    @content;
+  }
+}
+
+/// Responsive breakpoint manager
+/// @access public
+/// @param {String} $breakpoint - Breakpoint
+/// @requires $breakpoints
+@mixin respond-to($breakpoint) {
+  $raw-query: map-get($breakpoints, $breakpoint);
+
+  @if $raw-query {
+    $query: if(type-of($raw-query) == 'string', unquote($raw-query), inspect($raw-query));
+
+    @media #{$query} {
+      @content;
+    }
+  } @else {
+    @error 'No value found for `#{$breakpoint}`. '
+           + 'Please make sure it is defined in `$breakpoints` map.';
+  }
+}
+
+/// Set background & text color
+/// @access public
+/// @param {Color} $color
+@mixin set-background($color) {
+  background-color: $color;
+  color: set-text-color($color);
+}
+
+/// Set text overflow to ellipsis
+/// @access public
+@mixin text-overflow-ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/// Set element to vertically align content
+/// @access public
+/// @param {String} $align
+@mixin vertical-align($align: center) {
+  display: flex;
+  flex-direction: column;
+  justify-content: $align;
+}
+
+/// Set background image
+/// @access public
+/// @param {String} $imgpath
+/// @param {String} $position
+/// @param {String} $repeat
+@mixin background($imgpath,$position:center center,$repeat: no-repeat,$size: cover,$attachment: initial) {
+  background: {
+      image: url($imgpath);
+      position: $position;
+      size: $size;
+      repeat: $repeat;
+      attachment: $attachment;
+  }
+}

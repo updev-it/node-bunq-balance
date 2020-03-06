@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BunqBalance</title>
+    <link href="/img/favicon.ico" rel="shortcut icon" />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"
+      integrity="sha256-KM512VNnjElC30ehFwehXjx1YCHPiQkOPmqnrWtpccM="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment-with-locales.min.js"
+      integrity="sha256-AdQN98MVZs44Eq2yTwtoKufhnU+uZ7v2kXnD5vqzZVo="
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" type="text/css" href="/css/main.css" />
+    <script type="module" src="/js/main.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header"></div>
+      <div class="left"></div>
+      <div class="center">
+        <div class="box-placeholder">
+          <h1 id="name-placeholder" class="text"></h1>
+          <h3 id="balance-placeholder" class="text"></h3>
+          <div id="transactions-placeholder">
+            <ul>
+              <li class="text"></li>
+              <li class="text"></li>
+              <li class="text"></li>
+              <li class="text"></li>
+              <li class="text"></li>
+            </ul>
+          </div>
+          <div class="image"></div>
+        </div>
+        <div class="box">
+          <h1 id="name">&hellip;</h1>
+          <h3 id="balance"></h3>
+          <h5 id="transactions-label">Recente transacties:</h5>
+          <div id="transactions" class="table">
+            <div class="table-row-header created">Wanneer</div>
+            <div class="table-row-header description">Omschrijving</div>
+            <div class="table-row-header amount">Bedrag</div>
+          </div>
+          <div class="image"></div>
+        </div>
+      </div>
+      <div class="right"></div>
+      <div class="footer">Copyright &copy; 2020 BeSquared. <a href="/license.html">MIT License</a></div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,153 @@
+// -----------------------------------------------------------------------------
+// This file contains styles that are specific to the home page.
+// -----------------------------------------------------------------------------
+
+.container {
+  position: relative;
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: 0px 1fr auto;
+  grid-template-columns: 100px auto 125px;
+
+  > div {
+    margin-top: 70px;
+  }
+
+  .box,
+  .box-placeholder {
+    height: 300px;
+  }
+
+  .box {
+    display: none;
+  }
+
+  .box-placeholder {
+    display: block;
+
+    // Place empty content in tag to force render it
+    .text::before {
+      content: ' ';
+      white-space: pre;
+    }
+
+    .text {
+      background-color: #444;
+      border-radius: 50px;
+      min-width: 150px;
+      opacity: 0.1;
+      animation: fading 1s infinite;
+
+      &.link {
+        background-color: var(--blue);
+        opacity: 0.4;
+      }
+
+      &.line {
+        width: 100%;
+      }
+    }
+
+    li.text {
+      max-width: 50%;
+      background-color: #ccc;
+    }
+
+    h1.text {
+      display: block;
+      max-width: 90%;
+      background-color: #111;
+    }
+
+    h3.text {
+      display: block;
+      max-width: 70%;
+      background-color: #656565;
+    }
+  }
+
+  .center {
+    width: 100%;
+    padding: 25px;
+    margin-top: 50px;
+    margin-bottom: auto;
+    border-radius: 6px;
+    box-shadow: 1px 1px 2px 1px rgba(128, 128, 128, 0.1);
+    background-color: rgba(220, 220, 220, 0.2);
+    backdrop-filter: blur(5px);
+
+    .currency-symbol {
+      font-weight: bold;
+      font-size: 1.1em;
+    }
+
+    .amount {
+      font-weight: bold;
+
+      &:not(#balance-counter):not(.table-row-header) {
+        background: rgb(0, 0, 0);
+        background: linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, rgba(255, 255, 255, 0.5) 75%);
+        border-radius: 9999px;
+        padding: 3px 0px;
+        padding-right: 20px;
+        width: 100%;
+        text-align: right;
+      }
+
+      &.positive {
+        color: green;
+
+        &:not(#balance-counter):after {
+          content: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAABmJLR0QA/wD/AP+gvaeTAAAAdElEQVQYlb3PsQ2CUBSF4e8phTNYEQdgC+YwtsQVCC/OQCkFlVO4go0ls2BsnkBitDL+yWnOuffmXP5BSHozZ6IcZ2ysHdSGV7SaFqIKd+ywNbolL8yDUYcWPYqkHm3KZNPFoNS4LoocnVw87D93/fbHz3gCMfoRM13Opz4AAAAASUVORK5CYII=');
+          position: absolute;
+          margin-left: 3px;
+        }
+      }
+
+      &.negative {
+        color: red;
+
+        &:after {
+          content: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAABmJLR0QA/wD/AP+gvaeTAAAAXElEQVQYlcXOMQqDUACD4W+o3qbwwIt4m64deysvIDh4Gu0QF4dHK25iIMtPSMK9Cn1oDngT+hoMYQ5dxZ5hDEMdLGEKa3jvXndWfmce4RWW8A2f0J79LX8tl2gDjDAmXVvX5WwAAAAASUVORK5CYII=');
+          position: absolute;
+          margin-left: 3px;
+        }
+      }
+    }
+
+    .image {
+      @include background('/img/money.png', $size: auto 100px);
+      position: absolute;
+      bottom: -25px;
+      left: -128px;
+      z-index: 1;
+      width: 256px;
+      height: 100px;
+    }
+  }
+
+  .footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 2.5rem; /* Footer height */
+
+    text-align: center;
+    color: #999;
+    font-size: 0.8rem;
+  }
+}
+
+@keyframes fading {
+  0% {
+    opacity: 0.1;
+  }
+
+  50% {
+    opacity: 0.2;
+  }
+
+  100% {
+    opacity: 0.1;
+  }
+}

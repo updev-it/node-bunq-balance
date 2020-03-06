@@ -1,0 +1,86 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the button component.
+// -----------------------------------------------------------------------------
+
+%button {
+  border: none;
+  padding: 0.25rem 0.5rem;
+  border-radius: 5px;
+  background-color: none;
+  transition: background-color 0.2s ease;
+  cursor: pointer;
+}
+
+.btn-nostyle {
+  @extend %button;
+
+  color: inherit;
+  background: none;
+  border: none;
+}
+
+.btn,
+.btn-primary {
+  @extend %button;
+
+  color: $primary-color;
+  @include on-hover {
+    @include set-background($secondary-color);
+  }
+}
+
+.btn-dark {
+  @extend %button;
+
+  color: $light-color;
+  background-color: $dark-color;
+  @include on-hover {
+    @include set-background(lighten($color: $dark-color, $amount: 20));
+  }
+}
+
+.btn-light {
+  @extend %button;
+
+  color: $dark-color;
+  background-color: $light-color;
+  @include on-hover {
+    @include set-background(darken($color: $light-color, $amount: 20));
+  }
+}
+
+// '+' Add button
+.add-eventlog,
+.add-filter {
+  &,
+  &-light,
+  &-dark {
+    transition: transform 0.2s ease-in-out;
+    color: $primary-color;
+    cursor: pointer;
+
+    &:hover {
+      transform: rotate(90deg);
+    }
+
+    &.rotate {
+      transform: rotate(45deg);
+
+      &:hover {
+        transform: rotate(135deg);
+      }
+    }
+  }
+
+  &-dark {
+    color: $light-color;
+  }
+
+  &-light:hover {
+    color: $secondary-color;
+  }
+
+  &-dark:hover {
+    color: $primary-color;
+  }
+}

@@ -1,0 +1,37 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to form elements
+// -----------------------------------------------------------------------------
+
+form {
+  input::placeholder {
+    color: lighten($primary-color, 50%);
+  }
+
+  .form-group {
+    margin: 0.25rem 0;
+  }
+
+  .form-text {
+    display: block;
+    margin-top: 0.3rem;
+    color: #888;
+  }
+
+  label {
+    color: lighten($dark-color, 15%);
+    font-size: 0.8rem;
+    display: block;
+  }
+
+  input[type='text'],
+  input[type='email'],
+  input[type='password'],
+  input[type='date'],
+  select,
+  textarea {
+    font-size: 1rem;
+    padding: 0.25rem;
+    border: none;
+    border-radius: 3px;
+  }
+}

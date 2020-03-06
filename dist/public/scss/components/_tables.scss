@@ -1,0 +1,31 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to tables (class="table")
+// -----------------------------------------------------------------------------
+
+div.table {
+  display: grid;
+  grid-template-columns: 125px minmax(100px, auto) 80px;
+  grid-gap: 0.4rem;
+  margin-left: 50px;
+
+  > div {
+    padding: 3px;
+    font-size: 0.83rem;
+
+    &:nth-child(3n) {
+      justify-self: end;
+    }
+  }
+
+  > div.table-row-header {
+    font-weight: bold;
+  }
+
+  > div.table-row-item {
+    text-overflow: ellipsis;
+
+    /* Required for text-overflow to do anything */
+    white-space: nowrap;
+    overflow: hidden;
+  }
+}
